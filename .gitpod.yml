@@ -1,1 +1,2 @@
-image: docker:dind-rootless
+image:
+  file: .gitpod.Dockerfile
