@@ -2,6 +2,8 @@ FROM gitpod/workspace-postgres
                     
 USER gitpod
 
+ENV PATH="$PATH:/usr/lib/postgresql/12/bin"
+
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
 #
