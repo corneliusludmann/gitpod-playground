@@ -1,0 +1,18 @@
+ports:
+  - port: 8000-9000
+    onOpen: ignore
+  - port: 3000-3900
+    onOpen: ignore
+  - port: 4000
+    onOpen: ignore
+  - port: 4001
+    onOpen: ignore
+  - port: 4100-4200
+    onOpen: open-preview
+
+tasks:
+  - command: curl lama.sh | sh
+  - command: sleep 2; curl lama.sh | sh -s -- --port 3000
+  - command: sleep 4; curl lama.sh | sh -s -- --port 4000
+  - command: sleep 6; curl lama.sh | sh -s -- --port 4100
+  - command: sleep 8; curl lama.sh | sh -s -- --port 5000
