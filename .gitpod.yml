@@ -1,0 +1,19 @@
+ports:
+  - port: 8080
+    onOpen: open-browser
+    visibility: private
+  - port: 8081
+    onOpen: open-browser
+    visibility: public
+  - port: 8082
+    onOpen: open-browser
+
+tasks:
+  # explicitly private port
+  - command: curl lama.sh | sh
+  # explicitly public port
+  - command: sleep 5; curl lama.sh | sh -s -- --port 8081
+  # implictly private port
+  - command: sleep 15; curl lama.sh | sh -s -- --port 8082
+  # non-mentioned private port
+  - command: sleep 20; curl lama.sh | sh -s -- --port 8083
