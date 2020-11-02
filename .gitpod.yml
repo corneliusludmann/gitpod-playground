@@ -1,0 +1,9 @@
+tasks:
+  - init: |
+      echo "start init"
+      false
+      echo "end init"
+    command: |
+      echo "start command"
+      false
+      echo "end command"
